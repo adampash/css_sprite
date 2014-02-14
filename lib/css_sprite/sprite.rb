@@ -214,6 +214,7 @@ class Sprite
 
   # output the css sprite scss file
   def output_scss(directory, results)
+    puts "scss"
     unless results.empty?
       dest_image_name = dest_image_name(directory)
       dest_stylesheet_path = dest_stylesheet_path(directory)
@@ -240,6 +241,7 @@ class Sprite
 
         scale = 1
         if directory.match(/@2x/)
+          puts "MATCH"
           f.print "  background-size: #{(get_image(dest_image_path(directory))[:width]/2).to_s + 'px'};\n"
           scale = 2
         end
