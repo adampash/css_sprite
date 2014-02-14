@@ -214,7 +214,7 @@ class Sprite
 
   # output the css sprite scss file
   def output_scss(directory, results)
-    puts "scss"
+    puts "#{directory}"
     unless results.empty?
       dest_image_name = dest_image_name(directory)
       dest_stylesheet_path = dest_stylesheet_path(directory)
