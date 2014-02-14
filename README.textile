@@ -3,6 +3,39 @@ h1. css_sprite
 automatically css sprite.
 
 *************************************************************************
+h2. This fork supports @2x
+
+To use, create a new css_sprite directory called css_sprite@2x and place your retina images in that folder. 
+
+This will create a new css_sprite@2x.css.scss file when you run rake ```css_sprite:build```
+
+Inside that file, add whatever specific css media queries you want. E.g.,
+
+<pre><code>
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  .share .facebook, .share .google, .share .twitter {
+    background: asset-url('css_sprite@2x.png', image) no-repeat;
+    background-size: 15px;
+  }
+  .share .facebook {
+    background-position: 0px 0px;
+    width: 15px;
+    height: 15px;
+  }
+  .share .google {
+    background-position: 0px -15px;
+    width: 15px;
+    height: 15px;
+  }
+  .share .twitter {
+    background-position: 0px -30px;
+    width: 15px;
+    height: 15px;
+  }
+}
+</code></pre>
+
+*************************************************************************
 
 h2. Best Practices
 
